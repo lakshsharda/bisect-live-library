@@ -40,3 +40,11 @@ class LoanDesk:
         loan = Loan(member.member_id, isbn, day)
         self._loans.append(loan)
         return loan
+
+    def return_book(self, member: Member, isbn: str, day: int) -> int:
+        """Take a book back; returns the late fine in cents."""
+        for loan in self._loans:
+            if loan.member_id == member.member_id and loan.isbn == isbn:
+                self._loans.remove(loan)
+                return fine_cents(days_late(loan.borrowed_day, day))
+        raise LoanError("not borrowed")

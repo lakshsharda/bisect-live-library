@@ -47,3 +47,29 @@ def test_a_single_copy_goes_to_one_member_at_a_time(desk):
     desk.checkout(ANA, "rare", 1)
     with pytest.raises(LoanError, match="no copy"):
         desk.checkout(BEN, "rare", 1)
+
+
+def test_returning_on_time_costs_nothing(desk):
+    desk.checkout(ANA, "0", 0)
+    assert desk.return_book(ANA, "0", 14) == 0
+
+
+def test_returning_late_pays_a_fine(desk):
+    desk.checkout(ANA, "0", 0)
+    assert desk.return_book(ANA, "0", 17) == 25
+
+
+def test_a_long_overdue_return_pays_per_day(desk):
+    desk.checkout(ANA, "0", 0)
+    assert desk.return_book(ANA, "0", 19) == 75
+
+
+def test_returning_frees_the_copy(desk):
+    desk.checkout(ANA, "rare", 1)
+    desk.return_book(ANA, "rare", 2)
+    desk.checkout(BEN, "rare", 3)
+
+
+def test_returning_an_unborrowed_book_fails(desk):
+    with pytest.raises(LoanError, match="not borrowed"):
+        desk.return_book(ANA, "0", 1)
