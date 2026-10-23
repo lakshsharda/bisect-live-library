@@ -11,3 +11,9 @@ def test_loan_limits_by_tier():
 def test_unknown_tier_is_rejected():
     with pytest.raises(ValueError):
         loan_limit(Member("m3", "Cy", "gold"))
+
+
+def test_member_label():
+    from librarykit.members import member_label
+
+    assert member_label(Member("m1", "Ana")) == "Ana (standard)"

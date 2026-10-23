@@ -11,6 +11,10 @@ class Member:
     tier: str = "standard"
 
 
+def member_label(member: Member) -> str:
+    return f"{member.name} ({member.tier})"
+
+
 def loan_limit(member: Member) -> int:
     try:
         return LOAN_LIMITS[member.tier]
