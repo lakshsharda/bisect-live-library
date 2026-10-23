@@ -33,3 +33,6 @@ class Catalog:
     def search(self, text: str) -> list[Book]:
         needle = text.lower()
         return sorted((b for b in self._books.values() if needle in b.title.lower()), key=lambda b: b.title)
+
+    def titles_by_author(self, author: str) -> list[str]:
+        return [b.title for b in self.by_author(author)]

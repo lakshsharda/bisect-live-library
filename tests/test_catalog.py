@@ -40,3 +40,7 @@ def test_search_ignores_case():
 
 def test_search_with_no_match():
     assert make().search("zzz") == []
+
+
+def test_titles_by_author():
+    assert make().titles_by_author("Austen") == ["Emma"]
