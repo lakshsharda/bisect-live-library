@@ -23,7 +23,7 @@ class LoanDesk:
         self._loans: list[Loan] = []
 
     def loans_of(self, member: Member) -> list[Loan]:
-        return [loan for loan in self._loans if loan.member_id == member.member_id]
+        return [entry for entry in self._loans if entry.member_id == member.member_id]
 
     def copies_out(self, isbn: str) -> int:
         return sum(1 for loan in self._loans if loan.isbn == isbn)
