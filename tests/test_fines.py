@@ -32,3 +32,9 @@ def test_fine_grows_per_day():
 
 def test_fine_is_capped():
     assert fine_cents(100) == 1500
+
+
+def test_format_fine():
+    from librarykit.fines import format_fine
+
+    assert format_fine(75) == "$0.75" and format_fine(0) == "$0.00"

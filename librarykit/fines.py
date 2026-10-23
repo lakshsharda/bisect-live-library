@@ -23,3 +23,7 @@ def fine_cents(late_days: int) -> int:
     if billable <= 0:
         return 0
     return min(billable * FINE_PER_DAY_CENTS, FINE_CAP_CENTS)
+
+
+def format_fine(cents: int) -> str:
+    return f"${cents / 100:.2f}"
