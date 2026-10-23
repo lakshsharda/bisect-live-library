@@ -1,4 +1,5 @@
 """Due days and late fines. Days are integers; money is integer cents."""
+# Loans last two weeks.
 LOAN_DAYS = 14
 GRACE_DAYS = 2
 FINE_PER_DAY_CENTS = 25
