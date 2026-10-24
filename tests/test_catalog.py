@@ -48,3 +48,7 @@ def test_titles_by_author():
 
 def test_copies_total():
     assert make().copies_total() == 4
+
+
+def test_search_results_are_sorted():
+    assert [b.title for b in make().search("dune")] == ["Dune", "Dune Messiah"]
