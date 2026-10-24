@@ -73,3 +73,9 @@ def test_returning_frees_the_copy(desk):
 def test_returning_an_unborrowed_book_fails(desk):
     with pytest.raises(LoanError, match="not borrowed"):
         desk.return_book(ANA, "0", 1)
+
+
+def test_overdue_loans(desk):
+    desk.checkout(ANA, "0", 0)
+    desk.checkout(ANA, "1", 10)
+    assert [loan.isbn for loan in desk.overdue_loans(20)] == ["0"]

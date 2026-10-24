@@ -48,3 +48,6 @@ class LoanDesk:
                 self._loans.remove(loan)
                 return fine_cents(days_late(loan.borrowed_day, day))
         raise LoanError("not borrowed")
+
+    def overdue_loans(self, day: int) -> list[Loan]:
+        return [loan for loan in self._loans if days_late(loan.borrowed_day, day) > 0]
