@@ -44,3 +44,7 @@ def test_search_with_no_match():
 
 def test_titles_by_author():
     assert make().titles_by_author("Austen") == ["Emma"]
+
+
+def test_copies_total():
+    assert make().copies_total() == 4
