@@ -1,4 +1,4 @@
-"""The catalog of books."""
+"""The catalog of books: adding, looking up, searching."""
 from dataclasses import dataclass
 
 
