@@ -13,3 +13,7 @@ Small lending-library library: a catalog of books, members with loan limits, loa
 from librarykit.catalog import Book, Catalog
 from librarykit.loans import LoanDesk
 ```
+
+## Tiers
+
+Premium members pay nothing extra but may hold twice as many books.
