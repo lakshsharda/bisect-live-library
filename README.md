@@ -17,3 +17,7 @@ from librarykit.loans import LoanDesk
 ## Tiers
 
 Premium members pay nothing extra but may hold twice as many books.
+
+## Fines
+
+Fines are capped at $15.00 per book.
