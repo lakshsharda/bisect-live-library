@@ -11,6 +11,10 @@ class Member:
     tier: str = "standard"
 
 
+def is_premium(member: Member) -> bool:
+    return member.tier == "premium"
+
+
 def member_label(member: Member) -> str:
     return f"{member.name} ({member.tier})"
 

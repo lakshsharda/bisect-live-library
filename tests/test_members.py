@@ -17,3 +17,9 @@ def test_member_label():
     from librarykit.members import member_label
 
     assert member_label(Member("m1", "Ana")) == "Ana (standard)"
+
+
+def test_is_premium():
+    from librarykit.members import is_premium
+
+    assert is_premium(Member("m2", "Ben", "premium")) and not is_premium(Member("m1", "Ana"))
