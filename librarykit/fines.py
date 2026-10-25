@@ -20,10 +20,7 @@ def days_late(borrowed_day: int, returned_day: int) -> int:
 
 
 def fine_cents(late_days: int) -> int:
-    billable = late_days - GRACE_DAYS
-    if billable <= 0:
-        return 0
-    return min(billable * FINE_PER_DAY_CENTS, FINE_CAP_CENTS)
+    return min(max(late_days - GRACE_DAYS + 1, 0) * FINE_PER_DAY_CENTS, FINE_CAP_CENTS)
 
 
 def format_fine(cents: int) -> str:
