@@ -51,3 +51,6 @@ class LoanDesk:
 
     def overdue_loans(self, day: int) -> list[Loan]:
         return [loan for loan in self._loans if days_late(loan.borrowed_day, day) > 0]
+
+    def total_loans(self) -> int:
+        return len(self._loans)

@@ -79,3 +79,9 @@ def test_overdue_loans(desk):
     desk.checkout(ANA, "0", 0)
     desk.checkout(ANA, "1", 10)
     assert [loan.isbn for loan in desk.overdue_loans(20)] == ["0"]
+
+
+def test_total_loans(desk):
+    desk.checkout(ANA, "0", 1)
+    desk.checkout(BEN, "1", 1)
+    assert desk.total_loans() == 2
