@@ -38,3 +38,7 @@ def test_format_fine():
     from librarykit.fines import format_fine
 
     assert format_fine(75) == "$0.75" and format_fine(0) == "$0.00"
+
+
+def test_days_late_is_zero_the_day_before_the_due_day():
+    assert days_late(0, 13) == 0
