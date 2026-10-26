@@ -21,3 +21,7 @@ Premium members pay nothing extra but may hold twice as many books.
 ## Fines
 
 Fines are capped at $15.00 per book.
+
+## Changelog
+
+- 0.1.0: first release.
