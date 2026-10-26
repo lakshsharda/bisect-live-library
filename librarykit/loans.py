@@ -33,6 +33,7 @@ class LoanDesk:
         mine = self.loans_of(member)
         if any(loan.isbn == isbn for loan in mine):
             raise LoanError("already borrowed")
+        # A member may hold exactly as many books as their tier allows.
         if len(mine) >= loan_limit(member):
             raise LoanError("loan limit reached")
         if self.copies_out(isbn) >= book.copies:
