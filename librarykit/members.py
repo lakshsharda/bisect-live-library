@@ -1,4 +1,4 @@
-"""Members and their loan limits."""
+"""Members and their loan limits (standard 3, premium 6)."""
 from dataclasses import dataclass
 
 LOAN_LIMITS = {"standard": 3, "premium": 6}
