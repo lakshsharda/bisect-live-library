@@ -10,6 +10,10 @@ class Book:
     copies: int = 1
 
 
+def short_title(book: Book, width: int = 20) -> str:
+    return book.title if len(book.title) <= width else book.title[: width - 1] + "..."
+
+
 class Catalog:
     def __init__(self) -> None:
         self._books: dict[str, Book] = {}

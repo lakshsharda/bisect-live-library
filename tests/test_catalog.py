@@ -56,3 +56,9 @@ def test_search_results_are_sorted():
 
 def test_authors_are_listed_once_and_sorted():
     assert make().authors() == ["Austen", "Herbert"]
+
+
+def test_short_title():
+    from librarykit.catalog import short_title
+
+    assert short_title(Book("1", "A very long book title indeed", "X"), 10) == "A very lo..."
