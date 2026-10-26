@@ -39,3 +39,6 @@ class Catalog:
 
     def copies_total(self) -> int:
         return sum(b.copies for b in self._books.values())
+
+    def authors(self) -> list[str]:
+        return sorted({b.author for b in self._books.values()})

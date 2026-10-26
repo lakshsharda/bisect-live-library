@@ -52,3 +52,7 @@ def test_copies_total():
 
 def test_search_results_are_sorted():
     assert [b.title for b in make().search("dune")] == ["Dune", "Dune Messiah"]
+
+
+def test_authors_are_listed_once_and_sorted():
+    assert make().authors() == ["Austen", "Herbert"]
